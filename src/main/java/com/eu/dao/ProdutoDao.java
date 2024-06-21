@@ -3,10 +3,12 @@ package com.eu.dao;
 import com.eu.modelo.Produto;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 public class ProdutoDao {
 
     private final EntityManager em;
+
 
     public ProdutoDao(EntityManager em) {
         this.em = em;
@@ -25,5 +27,26 @@ public class ProdutoDao {
         this.em.remove(produto);
     }
 
+    public Produto buscarPorId(Long id){
+        return em.find(Produto.class, id);
+    }
 
+    public List<Produto> buscarTodos() {
+        String jpql = "SELECT p FROM Produto p";
+        return em.createQuery(jpql, Produto.class).getResultList();
+    }
+
+    public List<Produto> buscarPorNome(String nome) {
+        String jpql = "SELECT p FROM Produto p WHERE p.nome = ?1";
+        return em.createQuery(jpql, Produto.class)
+                .setParameter(1, nome)
+                .getResultList();
+    }
+
+    public List<Produto> buscarPorNomeDaCategoria(String nomeDaCategoria) {
+        String jpql = "SELECT p FROM Produto p WHERE p.categoria.nome = ?1";
+        return em.createQuery(jpql, Produto.class)
+                .setParameter(1, nomeDaCategoria)
+                .getResultList();
+    }
 }
