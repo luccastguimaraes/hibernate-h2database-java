@@ -10,6 +10,7 @@ import br.com.eu.modelo.Pedido;
 import br.com.eu.util.JPAUtil;
 
 import javax.persistence.EntityManager;
+import java.math.BigDecimal;
 
 public class CadastroDePedido {
 
@@ -36,6 +37,9 @@ public class CadastroDePedido {
         pedidoDao.cadastrar(pedido);
 
         em.getTransaction().commit();
+
+        BigDecimal total = pedidoDao.valorTotalVendido();
+        System.out.println("Valor Total: " + total);
         em.close();
 
     }
