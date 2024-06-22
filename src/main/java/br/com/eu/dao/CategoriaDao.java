@@ -1,6 +1,6 @@
-package com.eu.dao;
+package br.com.eu.dao;
 
-import com.eu.modelo.Categoria;
+import br.com.eu.modelo.Categoria;
 
 import javax.persistence.EntityManager;
 

@@ -1,4 +1,4 @@
-package com.eu.util;
+package br.com.eu.util;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

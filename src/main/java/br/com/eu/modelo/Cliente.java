@@ -1,4 +1,4 @@
-package com.eu.modelo;
+package br.com.eu.modelo;
 
 import javax.persistence.*;
 
@@ -42,5 +42,11 @@ public class Cliente {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    @Override
+    public String toString() {
+        return "{Cliente-Id: " + nome + "-" + id +
+                '}';
     }
 }

@@ -1,4 +1,4 @@
-package com.eu.modelo;
+package br.com.eu.modelo;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -86,12 +86,9 @@ public class Produto {
     @Override
     public String toString() {
         return "Produto{" +
-                "id=" + id +
+                "preco=" + preco +
+                ", id=" + id +
                 ", nome='" + nome + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", preco=" + preco +
-                ", dataCadastro=" + dataCadastro +
-                ", categoria=" + categoria +
                 '}';
     }
 }

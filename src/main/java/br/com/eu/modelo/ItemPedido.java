@@ -1,4 +1,4 @@
-package com.eu.modelo;
+package br.com.eu.modelo;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -10,6 +10,7 @@ public class ItemPedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "preco_unitario")
     private BigDecimal precoUnitario;
     private int quantidade;
     @ManyToOne
@@ -65,5 +66,16 @@ public class ItemPedido {
 
     public void setProduto(Produto produto) {
         this.produto = produto;
+    }
+
+    @Override
+    public String toString() {
+        return "ItemPedido{" +
+                "id=" + id +
+                ", pedido=" + pedido +
+                ", produto=" + produto +
+                ", quantidade=" + quantidade +
+                ", precoUnitario=" + precoUnitario +
+                '}';
     }
 }

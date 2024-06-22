@@ -1,6 +1,6 @@
-package com.eu.dao;
+package br.com.eu.dao;
 
-import com.eu.modelo.Produto;
+import br.com.eu.modelo.Produto;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
